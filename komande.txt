@@ -1,0 +1,65 @@
+SSH za CVAT:
+ssh -L 8080:localhost:8080 adminpmf@95.155.36.217 -p 2045
+Password: admin1!U
+
+Transfer dataset-a preko SSH:
+tar -czf v45_p2s_bs40_264epoch_params.tar.gz v45_p2s_bs40_264epoch_params 
+scp -C -P 2045 -r D:\rock_detection_v4.5.tar.gz adminpmf@95.155.36.217:/home/adminpmf/matija/datasets
+
+Venv (cmd): 
+C:/Users/suksa/Desktop/training/venv/Scripts/activate.bat
+
+Venv (powershell): 
+C:/Users/suksa/Desktop/training/venv/Scripts/Activate.ps1
+
+yolo detect train `
+data=D:\rock_detection_v4.3\rd_v4.3.yaml `
+model=yolov8m-p2.yaml `
+epochs=300 `
+imgsz=640 `
+batch=18 `
+box=5 `
+cls=0.5 `
+dfl=4.5 `
+single_cls=True `
+conf=0.2 `
+iou=0.2 `
+hsv_h=0.015 `
+hsv_s=0.2 `
+hsv_v=0.3 `
+degrees=5 `
+translate=0.1 `
+scale=0.7 `
+flipud=0.5 `
+fliplr=0.5 `
+mosaic=1.0 `
+mixup=0.0 `
+
+
+yolo detect train `
+data=D:\rock_detection_v4.5\config.yaml `
+model=yolov8m.yaml `
+epochs=350 `
+imgsz=640 `
+batch=28 `
+single_cls=True 
+
+yolo detect train `
+data=D:\rock_detection_v4.5\config.yaml `
+model=yolov8s-p2.yaml `
+epochs=350 `
+imgsz=640 `
+batch=32 `
+single_cls=True `
+conf=0.2 `
+iou=0.2 `
+hsv_h=0.015 `
+hsv_s=0.2 `
+hsv_v=0.3 `
+degrees=5 `
+translate=0.1 `
+scale=0.7 `
+flipud=0.5 `
+fliplr=0.5 `
+mosaic=1.0 `
+mixup=0.0 

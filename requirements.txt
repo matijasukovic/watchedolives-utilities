@@ -1,0 +1,6 @@
+datumaro
+sahi
+ultralytics
+optuna
+plotly
+kaleido
