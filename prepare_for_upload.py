@@ -9,7 +9,7 @@ args = vars(parser.parse_args())
 set_path = args["set_path"]
 
 # Example input
-#set_path = r"W:\2024_sets\2024_set1"
+#set_path = r"W:\2024_sets\raw\2024_set1"
 
 
 images_dir = os.path.join(set_path, 'images')
