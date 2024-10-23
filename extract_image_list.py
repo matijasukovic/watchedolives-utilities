@@ -13,11 +13,11 @@ labels = args["labels"]
 
 # Example input
 # dataset_path = r"W:\rock_detection_v4.5"
-# images = r"\images\valid"
-# labels = r"\labels\valid"
+# images = r"images\valid"
+# labels = r"labels\valid"
 
 
-directory = os.fsencode(dataset_path + images)
+directory = os.fsencode(os.path.join(dataset_path, images))
 
 output_file = open(os.path.join(dataset_path, labels, 'annotations.txt'), 'w')
 
