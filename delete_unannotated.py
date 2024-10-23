@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser(description='Given a YOLO subset, deletes a por
 parser.add_argument('-d','--dataset_path', help='Dataset path', required=True)
 parser.add_argument('-i','--images', help='Inner path to images directory', required=True)
 parser.add_argument('-l','--labels', help='Inner path to labels directory', required=True)
-parser.add_argument('-e','--image_extension', help='Extension of the images', required=True)
+parser.add_argument('-e','--image_extension', help='Extension of the images', default=".png")
 parser.add_argument('-c','--chance_for_removal', help='Chance in percents for each unannotated image to be deleted', default=0)
 args = vars(parser.parse_args())
 
