@@ -5,7 +5,7 @@ parser = argparse.ArgumentParser(description="Use this script to compare content
 parser.add_argument('-d','--dataset_path', help='Dataset path', required=True)
 parser.add_argument('-i','--images', help='Inner path to images directory', default="\images")
 parser.add_argument('-l','--labels', help='Inner path to labels directory', default="\labels")
-parser.add_argument('-del','--delete_missing', help='Delete whose counterpart is missing', default=False)
+parser.add_argument('-del', '--delete_missing', help='Delete files whose counterpart is missing', default=False)
 args = vars(parser.parse_args())
 
 dataset_path = args["dataset_path"]
@@ -34,7 +34,7 @@ for file in os.listdir(directory):
     if not os.path.isfile(image_path):
         print('Missing image: ', image_path)
 
-        if delete_missing == True:
+        if delete_missing == "True":
             os.remove(label_path)
 
 
@@ -51,6 +51,6 @@ for file in os.listdir(directory):
 
     if not os.path.isfile(label_path):
         print('Missing label: ', label_path)
-
-        if delete_missing == True:
+        if delete_missing == "True":
+            
             os.remove(image_path)
