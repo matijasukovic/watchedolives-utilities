@@ -31,7 +31,7 @@ def createYoloMetadata(set_path):
 gridSize=(3, 3)
 overlap=(0, 0)
 
-thresholdDropAnn=0.25
+thresholdDropAnn=0.2
 
 for dir in os.listdir(input_path):
     set_path = os.path.join(input_path, dir)
