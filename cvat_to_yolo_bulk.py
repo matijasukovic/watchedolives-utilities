@@ -4,7 +4,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Given a list of datasets in CVAT format, generates dataset in YOLO format')
 parser.add_argument('-i','--input_path', help='Path to the directory containing CVAT datasets', required=True)
-parser.add_argument('-o','--bar', help='Description for bar argument', required=True)
+parser.add_argument('-o','--output_path', help='Output directory path', required=True)
 args = vars(parser.parse_args())
 
 input_path = args["input_path"]
