@@ -2,6 +2,7 @@ import os
 import argparse
 import random
 import shutil
+from PIL import Image
 
 parser = argparse.ArgumentParser(description='Given image sets, extracts images for dummy oil estimation dataset.')
 parser.add_argument('-s','--sets_path', help='Path to the directory containing sets', default=r"/Volumes/Matija_ExtH/WatchedOlives/WatchedOlives/dataset_no_dupes")
@@ -28,5 +29,16 @@ if __name__ == '__main__':
                 continue
             
             print(image_name)
-            shutil.copyfile(os.path.join(set_path, image_name), os.path.join(output_path, image_name))
+
+            image_path = os.path.join(set_path, image_name)
+
+            try:
+                img = Image.open(image_path)
+                img.verify()
+                img.close() 
+            except Exception as e: 
+                print('File {0}: \n{1}'.format(image_path, e))
+                continue
+
+            shutil.copyfile(image_path, os.path.join(output_path, image_name))
         
