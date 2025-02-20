@@ -24,6 +24,9 @@ if __name__ == '__main__':
         target_image_names = random.sample(os.listdir(set_path), k=number_to_extract)
         
         for image_name in target_image_names:
+            if image_name[:1] == '.':
+                continue
+            
             print(image_name)
             shutil.copyfile(os.path.join(set_path, image_name), os.path.join(output_path, image_name))
         
