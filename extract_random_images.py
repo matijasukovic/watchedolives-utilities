@@ -4,7 +4,7 @@ import random
 import shutil
 from PIL import Image
 
-parser = argparse.ArgumentParser(description='Given image sets, extracts images for dummy oil estimation dataset.')
+parser = argparse.ArgumentParser(description='Given image sets, randomly extracts an amount of images to an output directory.')
 parser.add_argument('-s','--sets_path', help='Path to the directory containing sets', default=r"/Volumes/Matija_ExtH/WatchedOlives/WatchedOlives/dataset_no_dupes")
 parser.add_argument('-a','--amount_per_set', help='How many images to extract per set', default=2)
 parser.add_argument('-o','--output_path', help='Path to the output directory', default=r"/Volumes/Matija_ExtH/WatchedOlives/WatchedOlives/dataset_oil_estimation")
